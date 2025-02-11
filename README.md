@@ -1,8 +1,9 @@
-# 📟 Pager-ly – A Real-Time Cute Messaging Widget
-Live Demo:  pager-ly.web.app
+# 📟 Pager-ly – A Real-Time Cute Messaging Widget (Encrypted and Authenticated)
+Hosted app:  pager-ly.web.app
 
 ## ✨ About Pager-ly
-Pager-ly is a real-time, aesthetic, and private messaging widget that lets users send cute messages to their friends—just like an online pager. The app is lightweight, fast, and designed with a minimalist, bubbly UI to create an engaging chat experience.
+Pager-ly is a real-time, aesthetic, and private messaging widget that lets users send cute messages to their friends—just like an online pager. 
+The app is lightweight, fast, and designed with a minimalist, bubbly UI to create an engaging chat experience.
 
 ## 🔥 Features
 * Private Chat Servers – One-on-one private messaging with secure connections.
