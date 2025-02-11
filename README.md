@@ -31,3 +31,16 @@ Pager-ly is a real-time, aesthetic, and private messaging widget that lets users
 * Frontend: HTML, CSS, JS, Tailwind CSS
 * Backend & Real-Time Database: Firebase
 * Authentication: Firebase Authentication
+
+## Screenshot:
+
+![image](https://github.com/user-attachments/assets/c0170613-9629-424c-9ca3-25c20e238e63)
+![image](https://github.com/user-attachments/assets/fdac1898-51a9-4c49-bf94-527c7b0a2446)
+![image](https://github.com/user-attachments/assets/10098958-60e0-4783-bb54-fca4a0606e71)
+![image](https://github.com/user-attachments/assets/c8c59bf6-020f-49c4-9b3c-2e7d9bf783e3)
+![image](https://github.com/user-attachments/assets/d5caf3d9-60b6-49af-b8ca-bf96c48e346b)
+
+
+
+
+
