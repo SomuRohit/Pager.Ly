@@ -1,0 +1,260 @@
+/* Import Cute Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Indie+Flower&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('images/animated-bg.gif') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-y: auto;
+    transition: background 0.3s ease;
+}
+
+
+/* Dark Theme */
+body.dark {
+    background: url('images/animated-bg.gif') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Container Styling */
+.container {
+    width: 90%;
+    max-width: 500px;
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 4px 4px 12px rgba(255, 105, 180, 0.4);
+    text-align: center;
+    transition: background 0.3s ease, color 0.3s ease;
+    position: relative;
+}
+
+/* Dark Theme Container */
+body.dark .container {
+    background: #333;
+    color: white;
+    box-shadow: 4px 4px 12px rgba(255, 105, 180, 0.2);
+}
+
+/* Chat Messages */
+#messages {
+    max-height: 200px; /* Increased height for better readability */
+    overflow-y: auto; /* Makes chat messages scrollable */
+    border: 2px solid #ff99c8;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 2px 2px 10px rgba(255, 182, 193, 0.3);
+}
+
+/* Chat Bubble */
+.message {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffe0f0;
+    padding: 8px;
+    border-radius: 12px;
+    margin-bottom: 5px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position: relative;
+}
+
+/* Dark Mode Chat Bubble */
+body.dark .message {
+    background: #555;
+    box-shadow: 0px 0px 8px rgba(255, 105, 180, 0.5);
+}
+
+/* Avatar Selection Grid */
+#avatarOptions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px 20px; /* Increased spacing: 15px row gap, 20px column gap */
+    max-width: 400px; /* Slightly increased width for better spacing */
+    margin: 0 auto; /* Center the grid */
+}
+
+
+/* Avatar Images */
+#avatarOptions img {
+    width: 70px; /* Increased size */
+    height: 70px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: transform 0.2s;
+    box-shadow: 2px 2px 6px rgba(255, 182, 193, 0.5);
+}
+
+
+
+#avatarOptions img:hover {
+    transform: scale(1.15);
+}
+
+/* Selected Avatar */
+#selectedAvatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid #ff69b4;
+    margin-top: 5px;
+    box-shadow: 0px 0px 10px rgba(255, 105, 180, 0.5);
+}
+
+/* Color Picker */
+#colorPickerSection {
+    margin: 5px 0;
+    text-align: center;
+}
+
+#chatColorPicker {
+    width: 35px; /* Reduced size */
+    height: 35px;
+    cursor: pointer;
+    border:none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: transparent;
+}
+
+/* Emoji Picker */
+.emoji-picker {
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.emoji-picker:hover {
+    transform: scale(1.1);
+}
+
+/* Buttons */
+button {
+    background: #ff69b4;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 2px 2px 5px rgba(255, 105, 180, 0.3);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+body {
+    margin: 0;
+    padding-bottom: 10px; /* Reduced the space to reduce the empty gap */
+}
+
+.container {
+    min-height: 100vh; /* Ensure the container takes at least the full height of the screen */
+    padding-bottom: 10px; /* Reduced padding for less space below content */
+    box-sizing: border-box; /* Prevent padding from affecting the height */
+}
+
+/* Footer styling */
+#footer {
+    text-align: center;
+    font-size: 14px;
+    padding: 5px; /* Reduced padding to decrease space */
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+
+
+
+
+
+/* Ensures the whole page takes full height */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Pushes the footer to the bottom */
+.container {
+    flex: 1;
+}
+
+
+
+
+
+/* Top Buttons */
+#top-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 500px;
+    z-index: 100;
+}
+
+/* Bottom Bar */
+#bottom-bar {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 500px;
+    z-index: 100;
+}
+
+/* Input Field */
+input[type="text"] {
+    width: 70%;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* Send Button */
+#sendBtn {
+    background: #ff69b4;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Emoji Row */
+#emojiRow {
+    margin-top: 5px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Floating Hearts */
+@keyframes floatHearts {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-100px) scale(1.5); opacity: 0; }
+}
+
+.heart {
+    position: absolute;
+    font-size: 20px;
+    color: pink;
+    animation: floatHearts 1s ease-out;
+    pointer-events: none;
+}

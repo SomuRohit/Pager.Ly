@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ Pager.Ly ✨</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Import Cute Bubble Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
+
+    <style>
+        /* Emoji Animation */
+        .emoji {
+            display: inline-block;
+            font-size: 24px;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+        .emoji:active {
+            transform: scale(1.3);
+        }
+        
+        h1 {
+            font-family: 'Bubblegum Sans', cursive;
+            font-size: 48px;
+            color: #ff6b6b;
+            text-align: center;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        /* Blinking Cursor Effect */
+        .blinking-cursor::after {
+            content: "|";
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        /* Modal Styling */
+        #loginModal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #ff6b6b;
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            text-align: center;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        /* Modal Animation */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -60%);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        /* Close Button */
+        #closeModalBtn {
+            background-color: #fff;
+            color: #ff6b6b;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        #closeModalBtn:hover {
+            background-color: #ff99c8;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="blinking-cursor">💌 Pager.Ly</h1>
+        <button id="themeToggle">🌙 Switch Theme</button>
+        <button id="loginBtn">Sign in with Google</button>
+        <button id="logoutBtn">Sign Out</button>
+        <p id="userInfo">Not signed in? Sign in Above. </p>
+
+        <input type="text" id="friendEmail" placeholder="Friend's Email">
+        <button onclick="startChat()">Start Chat</button>
+
+        <div id="profileSection">
+            <h2>Choose Your Avatar:</h2>
+            <div id="avatarOptions">
+                <img src="images/dog.gif" onclick="selectAvatar('dog.gif')">
+                <img src="images/cat.gif" onclick="selectAvatar('cat.gif')">
+                <img src="images/bear.gif" onclick="selectAvatar('bear.gif')">
+                <img src="images/panda.gif" onclick="selectAvatar('panda.gif')">
+                <img src="images/rabbit.gif" onclick="selectAvatar('rabbit.gif')">
+                <img src="images/fox.gif" onclick="selectAvatar('fox.gif')">
+                <img src="images/tiger.gif" onclick="selectAvatar('tiger.gif')">
+            </div>
+        </div>
+
+        <div id="userProfile">
+            <h3>Your Avatar :</h3>
+            <img id="selectedAvatar" src="images/dog.gif">
+        </div>
+
+        <div id="colorPickerSection">
+            <h2>Choose Your Chat Color:</h2>
+            <input type="color" id="chatColorPicker" value="#ff99c8">
+        </div>
+        <br>
+        <div id="messages"></div>
+        
+        <input type="text" id="messageInput" placeholder="Type a message...">
+        <button onclick="sendMessage()">Send 💖</button>
+
+        <!-- Emoji Picker Section (iOS Emojis + Click Animation) -->
+        <div id="emojiRow">
+            <span class="emoji">😀</span>
+            <span class="emoji">😂</span>
+            <span class="emoji">🥰</span>
+            <span class="emoji">👍</span>
+            <span class="emoji">❤️</span>
+            <span class="emoji">😍</span>
+        </div>
+    </div>
+
+    <!-- Pop-up Modal -->
+    <div id="loginModal">
+        <h2>Welcome to Pager.Ly!</h2>
+        <p>You're now signed in. Enjoy chatting! 💖</p>
+        <button id="closeModalBtn">Close</button>
+    </div>
+
+    <script type="module" src="script.js"></script>
+    
+    <script>
+        const titleText = "💌 Pager.Ly";
+        let index = 0;
+        let isDeleting = false;
+    
+        function typeTitle() {
+            let displayText = titleText.substring(0, index);
+            document.title = displayText + (isDeleting ? " " : " |"); // Blinking effect
+    
+            if (!isDeleting) {
+                index++;
+                if (index > titleText.length) {
+                    isDeleting = true;
+                    setTimeout(typeTitle, 1000); // Pause before deleting
+                    return;
+                }
+            } else {
+                index--;
+                if (index === 0) {
+                    isDeleting = false;
+                }
+            }
+    
+            setTimeout(typeTitle, isDeleting ? 100 : 150); // Typing speed
+        }
+    
+        document.addEventListener("DOMContentLoaded", () => {
+            typeTitle(); // Ensure it starts only when DOM is ready
+        });
+
+        // Show Modal on successful login
+        document.getElementById("loginBtn").addEventListener("click", () => {
+            // Simulate successful login for demonstration
+            document.getElementById("loginModal").style.display = "block";
+        });
+
+        // Close the Modal
+        document.getElementById("closeModalBtn").addEventListener("click", () => {
+            document.getElementById("loginModal").style.display = "none";
+        });
+    </script>
+    
+    <footer id="footer">
+        <p>💖✨ Developed by  
+            <a href="https://github.com/somurohit" target="blank">
+                <span>Somu Rohit</span>
+            </a> ✨💖
+        </p>
+    </footer>    
+</body>
+</html>
