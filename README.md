@@ -7,6 +7,7 @@ The app is lightweight, fast, and designed with a minimalist, bubbly UI to creat
 
 ## 🔥 Features
 * Private Chat Servers – One-on-one private messaging with secure connections.
+ { IN ORDER TO VIEW ANONYMOUS MESSAGES: TYPE ANONYMOUS IN GMAIL BAR TO ACCESS THEM }
 
 * Real-Time Messaging – Instantly send and receive messages without delay.
 
